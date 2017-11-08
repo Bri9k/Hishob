@@ -42,7 +42,7 @@ int main()
 		scanf("%c",&c);
 		fgetc(stdin);
 	}
-	fprintf(fp,"%02d/%02d/%02d\t\t%04d\t\t%20s\n",e.t.tm_mday,e.t.tm_mon,e.t.tm_year,bal,"Balance");
+	fprintf(fp,"%02d/%02d/%02d\t\t%04d\t\t%20s\n\n",e.t.tm_mday,e.t.tm_mon,e.t.tm_year,bal,"Balance");
 	
 	// Update Balance
 	f = fopen("bal.raw","w");
