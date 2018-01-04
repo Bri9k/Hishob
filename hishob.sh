@@ -1,3 +1,3 @@
 #!/bin/bash
 ./hishob
-cat hishob.txt
+less hishob.txt
