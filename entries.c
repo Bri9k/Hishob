@@ -28,37 +28,10 @@ int gettime(struct tm * t)
 	time_t tim = time(NULL);
 	*t = *localtime(&tim);
 	t->tm_year -= 100;
-}
-	
-
-int writeentries(FILE * log, int n, entry * a)
-{
-	n *= sizeof(entry);
-	int k = fwrite(a,n,1,log);
-	k /= n * sizeof(entry);
+	t->tm_mon += 1;
 }
 
-int readentries(char * s, int n, entry * a)
-{
-	int i = 0;
-	FILE * f = fopen("hishob.log","r");
-	while(fread(a,sizeof(entry),n,f) == 1)
-	{
-		i++;
-	}
-	fclose(f);
-	return n - i;
-}
 
-int log_entry(FILE * i, FILE * o, int bal)
-{
-	register int si = sizeof(entry);
-	entry e;
-	while(fread(&e,si,1,i) == 1)
-	{
-		fprintf(o,"%02d/%02d/%02d\t\t%04d\t\t%20s\n",e.t.tm_mday,e.t.tm_mon,e.t.tm_year,e.amount,e.particular);
-	}
-	return 0;
-}
+// TODO: Optional entry of date.
 		
-
+//int optional_date_entry(FILE * f

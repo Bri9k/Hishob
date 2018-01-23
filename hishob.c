@@ -16,10 +16,7 @@ int main()
 	
 	// Get System Time
 	entry e;
-	time_t t = time(NULL);
-	e.t = *localtime(&t);
-	e.t.tm_year -= 100;
-	
+	gettime(&e.t);
 	FILE* fp = fopen("hishob.txt","a");
 	fprintf(fp,"%02d/%02d/%02d\t\t%04d\t\t%20s\n\n",e.t.tm_mday,e.t.tm_mon,e.t.tm_year,bal,"Balance");
 	
@@ -35,7 +32,7 @@ int main()
 	// Update Balance
 	f = fopen("bal.raw","w");
 	fwrite(&bal,sizeof(int),1,f);
-	fwrite(&t,sizeof(time_t),1,f);
+	fwrite(&e.t,sizeof(time_t),1,f);
 	fclose(f);
 	fclose(fp);
 	printf("Exit Code Zero !\n");
