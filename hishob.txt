@@ -1,0 +1,12 @@
+dd/mm/yy		Amount		         Particular
+
+04/03/18		0600		             Balance
+
+04/03/18		-020		                Bus
+
+04/03/18		0580		             Balance
+
+04/03/18		-025		               Food
+
+04/03/18		0555		             Balance
+

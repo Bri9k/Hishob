@@ -1,4 +1,4 @@
-hishob : hishob.c 
+hishob : hishob.c init
 	 gcc hishob.c -o hishob
 init :  init.c
 	gcc init.c -o init
